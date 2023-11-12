@@ -22,6 +22,28 @@ Implémente un calculateur de pourboire en utilisant les objets et les boucles.
 AIDE : Commence avec deux tableaux vides en tant que propriétés
         et remplis-les dans la boucle
 
+ */
+
+const facture = {
+    tableau: [124, 48, 268, 180, 42],
+    pourboires: [],
+    factures: [],
+    calculer: function (Pourboire) {
+        for (i = 0; i < this.tableau.length; i++) {
+            let pourboire = this.tableau[i] * (Pourboire / 100);
+            this.pourboires.push(this.tableau[i] + pourboire);
+            this.factures.push(this.tableau[i]);
+        }
+    }
+}
+
+facture.calculer(15);
+
+console.log(`${facture.factures}`);
+console.log(`${facture.pourboires}`);
+
+/*
+
 BONUS (EXTRA) APRÈS AVOIR FINI :
 
 La famille de Mark est aussi partie en vacances, et est allée dans 4 restaurants différents.
@@ -39,4 +61,5 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 8. Affiche qui a payé le pourboire le plus élevé en moyenne.
 
 BONNE CHANCE 😀
+
 */
